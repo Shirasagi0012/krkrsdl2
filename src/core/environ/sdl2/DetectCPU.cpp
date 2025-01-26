@@ -477,8 +477,9 @@ static ttstr TVPDumpCPUInfo(tjs_int cpu_num)
 
 	TVPAddImportantLog(features);
 
-	if(((TVPCPUID1_EAX >> 8) & 0x0f) <= 4)
-		throw Exception( TVPFormatMessage( TVPCpuCheckFailureCpuFamilyOrLesserIsNotSupported, features).c_str() );
+	// if(((TVPCPUID1_EAX >> 8) & 0x0f) <= 4)
+	// 	throw Exception( TVPFormatMessage( TVPCpuCheckFailureCpuFamilyOrLesserIsNotSupported, features).c_str() );
+	// Disable for ARM64 Windows
 
 	return features;
 }
